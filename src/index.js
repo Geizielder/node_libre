@@ -5,8 +5,9 @@ import chalk from 'chalk';
 function extraiLinks(texto){
     const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
     const capturas = [...texto.matchAll(regex)];
-    const resultados = capturas.map(captura => ({[captura[1]]: captura[2]}))
-    console.log(resultados);
+    const resultados = capturas.map(captura => ({[captura[1]]: captura[2]}));
+    
+    return resultados.length !== 0 ? resultados : 'Não a links no arquivo';
 }
 
 
@@ -21,7 +22,7 @@ async function pegaArquivo(caminhoDoArquivo) {
     try {
         const encoding = 'utf-8';
         const texto = await fs.promises.readFile(caminhoDoArquivo, encoding)
-        extraiLinks(texto)
+        return extraiLinks(texto)
     } catch (erro) {
         trataErro(erro);
     }
