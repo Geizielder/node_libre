@@ -47,5 +47,6 @@ async function pegaArquivo(caminhoDoArquivo) {
 //     const encoding = 'utf-8';
 //     fs.promises.readFile(caminhoDoArquivo, encoding).then((texto) => console.log(chalk.green(texto))).catch(trataErro);
 // }
-pegaArquivo('./arquivos/texto.md');
 // pegaArquivo('./arquivos/');
+
+export default pegaArquivo;
