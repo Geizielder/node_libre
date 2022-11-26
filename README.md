@@ -1,2 +1,2 @@
 # Criando primeira biblioteca | Formação javaScript Back End 
-    -O projeto implementa uma biblioteca que interage com documentos em Markdown
+    -O projeto implementa uma biblioteca que interage com documentos em Markdown em busca de urls.
